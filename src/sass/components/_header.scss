@@ -1,4 +1,70 @@
-.header{
+$hight_burger_line: 2px;
+.header {
     background-color: red;
     color: #fff;
+
+    &__logo {
+        color: #fff;
+    }
+
+    &__nav {
+        color: #fff;
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                list-style: none;
+                margin-right: 10px;
+
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                }
+            }
+        }
+
+    }
+    &__burger {
+        position: relative;
+    
+        span {
+            width: 20px;
+            height: 2px;
+            background-color: #fff;
+        }
+    
+        :first-child {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        :last-child {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        :nth-child(2) {
+            position: absolute;
+            left: 0;
+            top: calc(50% - 1px);
+        }
+        &.active {
+            :first-child {
+                transform: rotate(45deg);
+                top: 57%;
+            }
+            :last-child {
+                transform: rotate(-45deg);
+                top: 53%;
+            }
+            :nth-child(2) {
+                display: none;
+            }
+        }
 }
+
+
+}
+
